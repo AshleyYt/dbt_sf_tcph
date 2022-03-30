@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: tpch_sf1
+    database: snowflake_sample_data
+
+    tables:
+      - name: customer
+      - name: lineitem
+      - name: nation
+      - name: orders
+      - name: part
+      - name: partsupp
+      - name: region
+      - name: supplier
+
+
+models:
+    - name: order_keys
+      description: list the order keys satisfy the condition with order volume larger than the threshold
+      columns:
+          - name: orderkey
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: customer_with_large_volume
+      description: rder volume larger than the threshold
+      columns:
+          - name: customer_order_id
+            description: "customer_order_id is the primary key for this table"
+            tests:
+                - unique
+                - not_null
+
