@@ -1,5 +1,3 @@
-
-
 select l_orderkey as orderkey
 from {{ source('tpch_sf1','lineitem')}} 
 group by l_orderkey 

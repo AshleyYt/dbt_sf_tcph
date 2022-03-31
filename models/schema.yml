@@ -25,8 +25,9 @@ models:
                 - unique
                 - not_null
 
+
     - name: customer_with_large_volume
-      description: rder volume larger than the threshold
+      description: '{{ doc("table_customer_with_large_volume") }}'
       columns:
           - name: customer_order_id
             description: "customer_order_id is the primary key for this table"

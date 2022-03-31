@@ -33,15 +33,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_sf_tcph:
-    # Applies to all files under models/example/
     staging:
       +materialized: table
       +schema: staging
-    tcph:
+    tpch:
       +materialized: table
-      +schema: publish
+      +schema: tpch
 
 
 vars:
-  promotion_month: '1995-09-01'
   order_quantity: "300"
+
+
+  

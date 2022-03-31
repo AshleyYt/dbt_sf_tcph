@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='customer_order_id'
+    )
+}}
+
 select  
         concat(to_varchar(c_custkey), '_', to_varchar(o_orderkey)) as customer_order_id,
         c_name as customer_name, 
